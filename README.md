@@ -1,6 +1,6 @@
 # vue-swipe-tab-layout
 
->
+> A vue component that simulate native Android component-tabLayout (一个模仿安卓tabLayout的Vue组件)
 
 ## 查看案例
 
@@ -9,7 +9,7 @@
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run demo
 ```
 
 ## Build Setup
