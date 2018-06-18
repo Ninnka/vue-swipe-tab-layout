@@ -5,6 +5,7 @@
         <div
           class="nav-item--wrapper"
           :class="fullFlex ? 'flex-wrapper' : ''"
+          :style="navItemWrapperStyleGetter"
           v-for="(tabNav, index) of tabNavList"
           :key="tabNav.key"
           ref="tabNavRef"
@@ -41,8 +42,10 @@ export default {
   name: 'SwipeTabContainer',
 
   props: {
+    // * 当前组件的拥有者，一般设置为所在的路由页面或者父组件
     owner: '',
 
+    // * tab对象列表
     tabNavList: {
       type: Array,
       default () {
@@ -50,23 +53,27 @@ export default {
       }
     },
 
+    // * 当前所在的tab index
     currentTabIndex: {
       type: Number,
       default: 0
     },
 
+    // * 导航条的宽度控制因子
     indicatorWidthScaleFactor: {
       type: Number,
       default: 0.1
     },
 
-    swipeTabNavStyle: {
+    // * tab-nav--wrapper的自定义样式
+    swipeTabNavWrapperStyle: {
       type: Object,
       default () {
         return {};
       }
     },
 
+    // * tab-content的自定义样式
     swipeTabContentItemStyle: {
       type: Object,
       default () {
@@ -74,6 +81,7 @@ export default {
       }
     },
 
+    // * 每一个nav-item平分父级的宽度
     fullFlex: false
   },
 
@@ -176,10 +184,10 @@ export default {
   },
 
   computed: {
-    navItemStyleGetter () {
+    navItemWrapperStyleGetter () {
       const styles = {
-        // 'min-width': `${100 / this.tabNavList.length}%`
-        ...this.swipeTabNavStyle
+        'max-width': `${100 / this.tabNavList.length}%`,
+        ...this.swipeTabNavWrapperStyle
       };
       return styles;
     },
@@ -551,7 +559,7 @@ export default {
         // pointer-events: auto !important;
 
         &.flex-wrapper {
-          padding: '0 !important';
+          padding: 0 !important;
           flex-grow: 1;
           flex-shrink: 1;
         }
