@@ -2,7 +2,7 @@
 
 > A vue component that simulate native Android component-tabLayout (一个模仿安卓tabLayout的Vue组件)
 
-## 查看案例
+## preview demo
 
 ```bash
 # install dependencies
@@ -24,3 +24,7 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+## 使用方法
+
+> 具体请查看 `/demo/App.vue`
