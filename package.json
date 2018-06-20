@@ -1,10 +1,15 @@
 {
   "name": "vue-swipe-tab-layout",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "author": "Rennzh <hennzr@gmail.com>",
   "private": false,
   "main": "dist/swipe-tab-layout.min.js",
+  "keywords": [
+    "vue",
+    "TabLayout",
+    "ViewPager"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Rennzh/vue-swipe-tab-layout.git"
