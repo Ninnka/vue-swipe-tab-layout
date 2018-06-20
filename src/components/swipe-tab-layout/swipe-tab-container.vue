@@ -12,10 +12,12 @@
           @click="tabNavClick({
             index,
             tabNav,
+            event: $event
           })"
           @dblclick="tabNavdblClick({
             index,
-            tabNav
+            tabNav,
+            event: $event
           })">
           <slot :name="`swipe-tab-nav-${tabNav.key}`"></slot>
         </div>

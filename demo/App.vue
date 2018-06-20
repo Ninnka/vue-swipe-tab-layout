@@ -81,12 +81,12 @@ export default {
   },
 
   methods: {
-    tabNavClick ({ index, tabNav }) {
-      console.log('click tab nav');
+    tabNavClick ({ index, tabNav, event }) {
+      console.log('click tab nav', event);
     },
 
-    tabNavdblClick ({ index, tabNav }) {
-      console.log('double click tab nav');
+    tabNavdblClick ({ index, tabNav, event }) {
+      console.log('double click tab nav', event);
     },
   }
 };
