@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import SwipeTabNav from './swipe-tab-nav';
-
 import BScroll from 'better-scroll';
 import Hammer from 'hammerjs';
 
@@ -42,7 +40,7 @@ export default {
   name: 'SwipeTabContainer',
 
   props: {
-    // * 当前组件的拥有者，一般设置为所在的路由页面或者父组件
+    // * 当前组件的拥有者，可以设置为所在的路由页面或者父组件
     owner: '',
 
     // * tab对象列表
@@ -86,7 +84,6 @@ export default {
   },
 
   components: {
-    SwipeTabNav
   },
 
   directives: {
@@ -94,31 +91,31 @@ export default {
 
   data () {
     return {
-      tabNavScrollIns: null,
-      tabNavScrollOptions: {},
-      swipeContentLayerWidth: null,
-      swipeContentTabNavSliderWidth: null,
-      swipeContentSliderWidth: null,
-      swipeContentSliderTranslateXOld: 0,
-      swipeContentSliderTranslateX: 0,
-      panAllow: false,
-      sliderHammerIns: null,
-      sliderCssTransition: false,
-      slidertransitionTime: 0.4,
-      isPaningLeft: false,
-      isPanedLeft: false,
-      isPaningRight: false,
-      isPanedRight: false,
-      tmpLeftCenter: null,
-      tmpRightCenter: null,
-      setLeftDirection: false,
-      setRightDirection: false,
-      navItemWidths: [],
-      navItemLefts: [],
-      navIndicatorTranslateX: 0,
-      navIndicatorTranslateXOld: 0,
-      translateScales: [],
-      maxtabNavSliderScrollXDiff: 0,
+      tabNavScrollIns: null, // * tab-nav 的滑动实例
+      tabNavScrollOptions: {}, // * 创建 tab-nav 的滑动实例的可选项
+      swipeContentLayerWidth: null, // * tab-content 容器的宽度
+      swipeContentTabNavSliderWidth: null, // * tab-nav 的滑动容器的宽度
+      swipeContentSliderWidth: null, // * tab-content 的滑动容器的宽度
+      swipeContentSliderTranslateXOld: 0, // * 保存就得滑动值
+      swipeContentSliderTranslateX: 0, // * 动态的滑动值
+      panAllow: false, // * 是否允许滑动
+      sliderHammerIns: null, // * tab-content 的hammer实例
+      sliderCssTransition: false, // * 是否开始csstransition
+      slidertransitionTime: 0.4, // * csstransition持续时间
+      isPaningLeft: false, // * 是否向左滑动中
+      isPanedLeft: false, // * 向左滑动完毕
+      isPaningRight: false, // * 是否向右滑动中
+      isPanedRight: false, // * 向右滑动完毕
+      tmpLeftCenter: null, // * 从右往左的临时转折点
+      tmpRightCenter: null, // * 从左往左的临时转折点
+      setLeftDirection: false, // *
+      setRightDirection: false, // *
+      navItemWidths: [], // * nav-item 的宽度
+      navItemLefts: [], // * nav-item 的左偏移值
+      navIndicatorTranslateX: 0, // * 动态的 nav-indicator 滑动值
+      navIndicatorTranslateXOld: 0, // * 保存 nav-indicator 的滑动值
+      translateScales: [], // * nav-indicator 向下一个或前一个item滑动时的距离跟 tab-content 的跨度比
+      maxtabNavSliderScrollXDiff: 0, // * tab-nav 允许的最大的滑动值
     };
   },
 
